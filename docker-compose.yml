@@ -1,0 +1,10 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  
+  node-app:
+    restart: on-failure # Restart policy. It can be: "no" (it must have single or double quotes because it's a reserved word in yml), always, on-failure, unless-stopped
+    build: .
+    ports:
+      - "4001:8081"
